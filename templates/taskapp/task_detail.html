@@ -3,9 +3,12 @@
 
 {% block content %}
 
-<div>{{object.title}}</div>
-<div>{{object.user}}</div>
-<div>{{object.due_date}}</div>
+<div>{{task.title}}</div>
+<div>{{task.user}}</div>
+<div>{{task.due_date}}</div>
+
+<a href="{% url 'task-update' task.id %}" ><button>Update</button></a>  
+<a href="{% url 'task-delete' task.id %}" ><button>Delete</button></a>  
 
 {% endblock content %}
 
