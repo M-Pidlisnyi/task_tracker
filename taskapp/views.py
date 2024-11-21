@@ -31,6 +31,7 @@ class TaskDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        comments_with_pics = Comment.objects.filter(comment_pic__in_null=False)
         context["comment_form"] = CommentForm()
        
         return context

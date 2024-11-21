@@ -25,5 +25,6 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     comment_pic = models.ImageField(upload_to="comment_pics/", null=True, blank=True)
 
-
+    class Meta:
+        ordering = ["-created_at"]
 

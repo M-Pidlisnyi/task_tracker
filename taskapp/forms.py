@@ -1,4 +1,4 @@
-from django.forms import ModelForm, Form, ChoiceField, ImageField, FileInput
+from django.forms import ModelForm, Form, ChoiceField, ImageField, FileInput, TextInput
 
 
 from .models import Task, Comment
@@ -26,5 +26,6 @@ class CommentForm(ModelForm):
         fields = ['content', 'comment_pic']
 
         widgets = {
+            "content": TextInput(),
             "comment_pic": FileInput()
         }
